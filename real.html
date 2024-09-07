@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siren Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: transparent; /* Ensure background is transparent */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Space between the siren and text */
+        }
+
+        .text {
+            font-size: 24px;
+            font-weight: bold;
+            color: green; /* Changed to green */
+            animation: shake 0.5s infinite;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .siren-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        .siren {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: green; /* Siren color */
+            border-radius: 50%;
+            box-shadow: 0 0 20px green; /* Siren glow */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .siren::before, .siren::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid green; /* Siren pulse color */
+            box-sizing: border-box;
+            animation: pulse 1s infinite;
+        }
+
+        .siren::before {
+            width: 100px;
+            height: 100px;
+            top: -20px;
+            left: -20px;
+        }
+
+        .siren::after {
+            width: 140px;
+            height: 140px;
+            top: -40px;
+            left: -40px;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text text-left">REAL</div>
+        <div class="siren-container">
+            <div class="siren"></div>
+        </div>
+        <div class="text text-right">सक्कली</div>
+    </div>
+</body>
+</html>
