@@ -7,3 +7,4 @@ I also tested with pretrained models(ResNet,Inception v3, MobileNet) but there w
 
 Dataset for Fake notes for 500 and 1000 were obtained with the help of NRB(Nepal Rastra Bank).
 
+Do note that this was made entirely using Seq models along with limited datasets so there are still numerous parameters tuning needed to be done and more rigorous research to be conducted in order to improve its accuracy and make a more reliable model. This model is still in need to be subjected to imporvements and tunings.
